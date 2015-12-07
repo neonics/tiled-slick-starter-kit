@@ -1,3 +1,4 @@
+import java.io.File;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -51,7 +52,7 @@ class Resources
             Sheet x = new Sheet(
                 startId,
                 new SpriteSheet(
-                    (String) o.get( "image" ),
+                    new File( JSONLoader.dir, (String) o.get( "image" ) ).getAbsolutePath(),
                     ( (Long) o.get( "tileheight" ) ).intValue(),
                     ( (Long) o.get( "tilewidth" ) ).intValue() ) );
 

@@ -13,10 +13,14 @@ import org.json.simple.parser.JSONParser;
 
 public class JSONLoader
 {
+    static File dir;
+
     public static void load( File file )
         throws Exception
     {
         Main.log( "Loading " + file );
+
+        dir = file.getParentFile();
 
         JSONParser parser = new JSONParser();
         Object obj = parser.parse( new FileReader( file ) );
